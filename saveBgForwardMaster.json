@@ -1,0 +1,233 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters.",
+    "version": "1.0.0",
+    "title": "KKU BTS saveBgForwardMaster",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "apiteam@swagger.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "services.kku.ac.th",
+  "basePath": "/kkufmisresource2test/api/users",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/saveBgForwardMaster": {
+      "post": {
+        "summary": "",
+        "description": "",
+        "operationId": "BgForwardMaster",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "budgetForward",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "iden": {
+                  "type": "object",
+                  "properties": {
+                    "ouCode": {
+                      "type": "string",
+                      "example": "001"
+                    },
+                    "forwardId": {
+                      "type": "string",
+                      "example": null
+                    }
+                  }
+                },
+                "forwardDate": {
+                  "type": "string",
+                  "format": "date",
+                  "example": "11/01/2021"
+                },
+                "docCode": {
+                  "type": "string",
+                  "example": "BG"
+                },
+                "docTitle": {
+                  "type": "string",
+                  "example": "paymenthub test"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "docRefId": {
+                  "type": "string",
+                  "example": "64-0001963"
+                },
+                "docRefDate": {
+                  "type": "string",
+                  "format": "date",
+                  "example": "23/11/2020"
+                },
+                "budgetYearControl": {
+                  "type": "integer",
+                  "example": 2564
+                },
+                "budgetYear": {
+                  "type": "integer",
+                  "example": 2564
+                },
+                "fsourceCode": {
+                  "type": "string",
+                  "example": "2"
+                },
+                "fundCode": {
+                  "type": "string",
+                  "example": "1"
+                },
+                "planCode": {
+                  "type": "string",
+                  "example": "62201"
+                },
+                "projId": {
+                  "type": "string",
+                  "example": "220100001"
+                },
+                "atvCode": {
+                  "type": "string",
+                  "example": "124398"
+                },
+                "bgSecCode": {
+                  "type": "string",
+                  "example": "541203000"
+                },
+                "divCode": {
+                  "type": "string",
+                  "example": "0700"
+                },
+                "amount": {
+                  "type": "number",
+                  "format": "float",
+                  "example": 2
+                },
+                "remark": {
+                  "type": "string",
+                  "example": "64-0001963"
+                },
+                "prMethod": {
+                  "type": "string",
+                  "example": "I"
+                },
+                "mainType": {
+                  "type": "string",
+                  "example": "BG01"
+                },
+                "bgForwardDetails": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "iden": {
+                        "type": "object",
+                        "properties": {
+                          "ouCode": {
+                            "type": "string",
+                            "example": "001"
+                          },
+                          "forwardId": {
+                            "type": "string",
+                            "example": null
+                          },
+                          "forwardSeq": {
+                            "type": "integer",
+                            "example": 1
+                          }
+                        }
+                      },
+                      "atvCode": {
+                        "type": "string",
+                        "example": "124398"
+                      },
+                      "subSectionCode": {
+                        "type": "string",
+                        "example": "541203019"
+                      },
+                      "amount": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 2
+                      },
+                      "vateRate": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 0
+                      },
+                      "vatAmount": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 0
+                      },
+                      "totalAmount": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 2
+                      },
+                      "rsvUsageAmount": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "fail",
+            "schema": {
+              "$ref": "#/responses/UnauthorizedError"
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "responses": {
+    "UnauthorizedError": {
+      "description": "Authentication information is missing or invalid",
+      "headers": {
+        "WWW_Authenticate": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
