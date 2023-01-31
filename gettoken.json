@@ -22,9 +22,9 @@
   "paths": {
     "/token": {
       "post": {
-        "summary": "Add a new pet to the store",
+        "summary": "",
         "description": "",
-        "operationId": "addPet",
+        "operationId": "getToken",
         "consumes": [
           "application/json"
         ],
