@@ -45,10 +45,8 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/ApiResponse"
-            }
+            "description": "successful operation"
+            
           },
           "400": {
             "description": "Error",
