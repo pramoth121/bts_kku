@@ -15,28 +15,6 @@
   },
   "host": "services.kku.ac.th",
   "basePath": "/kkufmisauth/oauth",
-  "tags": [
-    {
-      "name": "pet",
-      "description": "Everything about your Pets",
-      "externalDocs": {
-        "description": "Find out more",
-        "url": "http://swagger.io"
-      }
-    },
-    {
-      "name": "store",
-      "description": "Access to Petstore orders"
-    },
-    {
-      "name": "user",
-      "description": "Operations about user",
-      "externalDocs": {
-        "description": "Find out more about our store",
-        "url": "http://swagger.io"
-      }
-    }
-  ],
   "schemes": [
     "https",
     "http"
@@ -57,17 +35,20 @@
           {
             "name": "grant_type",
             "in": "query",
-            "type": "string"
+            "type": "string",
+            "required": true
           },
           {
             "name": "username",
             "in": "query",
-            "type": "string"
+            "type": "string",
+            "required": true
           },
           {
             "name": "password",
             "in": "query",
-            "type": "string"
+            "type": "string",
+            "required": true
           }
         ],
         "responses": {
@@ -75,6 +56,12 @@
             "description": "Success",
             "schema": {
               "$ref": "#/definitions/return"
+            }
+          },
+          "401": {
+            "description": "fail",
+            "schema": {
+              "$ref": "#/responses/UnauthorizedError"
             }
           },
           "405": {
@@ -121,20 +108,15 @@
       "xml": {
         "name": "Order"
       }
-    },
-    "Category": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "name": {
+    }
+  },
+  "responses": {
+    "UnauthorizedError": {
+      "description": "Authentication information is missing or invalid",
+      "headers": {
+        "WWW_Authenticate": {
           "type": "string"
         }
-      },
-      "xml": {
-        "name": "Category"
       }
     }
   },
