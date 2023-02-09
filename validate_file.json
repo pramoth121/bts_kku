@@ -36,6 +36,12 @@
         ],
         "parameters": [
           {
+            "name": "access_token",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "file",
             "in": "formData",
             "description": "file to upload",
