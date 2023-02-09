@@ -29,6 +29,7 @@
         "description": "",
         "operationId": "uploadFile",
         "consumes": [
+          "application/json",
           "multipart/form-data"
         ],
         "produces": [
