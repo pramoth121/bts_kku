@@ -38,7 +38,8 @@
             "in": "formData",
             "description": "file to upload",
             "required": true,
-            "type": "file"
+            "type": "file",
+            "x-mimetype": "application/pdf"
           }
         ],
         "responses": {
