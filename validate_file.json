@@ -26,7 +26,8 @@
         "description": "validate",
         "operationId": "uploadFile",
         "consumes": [
-          "multipart/form-data"
+          "multipart/form-data",
+          "application/pdf"
         ],
         "produces": [
           "application/json"
