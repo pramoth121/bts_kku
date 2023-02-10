@@ -29,7 +29,7 @@
           "multipart/form-data"
         ],
         "produces": [
-          "text/plain"
+          "application/json"
         ],
         "parameters": [
           {
