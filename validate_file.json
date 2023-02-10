@@ -22,11 +22,8 @@
   "paths": {
     "/validate": {
       "post": {
-        "tags": [
-          "pet"
-        ],
         "summary": "uploads file",
-        "description": "",
+        "description": "validate",
         "operationId": "uploadFile",
         "consumes": [
           "multipart/form-data"
@@ -35,12 +32,6 @@
           "text/plain"
         ],
         "parameters": [
-          {
-            "name": "access_token",
-            "in": "query",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "file",
             "in": "formData",
