@@ -231,14 +231,6 @@
   },
   "definitions": {
     "return": {
-      "type": "object",
-      "properties": {
-        "iden": {
-          "type": "object",
-          "properties": {
-            "ouCode": {
-              "type": "string"
-            },
             "forwardId": {
               "type": "string",
               "example": null
