@@ -231,11 +231,11 @@
   },
   "definitions": {
     "return": {
-            "forwardId": {
-              "type": "string",
-              "example": null
-            }
-          }
+      "type": "string",
+      "properties": {
+        "forwardId": {
+          "type": "string",
+          "example": null
         }
       }
     }
