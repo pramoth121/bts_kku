@@ -231,11 +231,19 @@
   },
   "definitions": {
     "return": {
-      "type": "string",
+      "type": "object",
       "properties": {
-        "forwardId": {
-          "type": "string",
-          "example": null
+        "iden": {
+          "type": "object",
+          "properties": {
+            "ouCode": {
+              "type": "string"
+            },
+            "forwardId": {
+              "type": "string",
+              "example": null
+            }
+          }
         }
       }
     }
