@@ -1,0 +1,777 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters.",
+    "version": "1.0.0",
+    "title": "KKU BusinessTrip saveBgUsageMaster",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "apiteam@swagger.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "services.kku.ac.th",
+  "basePath": "/kkufmisresource2test/api/users",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/saveBgUsageMaster": {
+      "post": {
+        "description": "Add BG Usage",
+        "operationId": "BgUsageMaster",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "access_token",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "BGUsage",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "object",
+                  "properties": {
+                    "ouCode": {
+                      "type": "string"
+                    },
+                    "usageId": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "usageDate": {
+                  "type": "string"
+                },
+                "forwardId": {
+                  "type": "string"
+                },
+                "budgetYearControl": {
+                  "type": "integer"
+                },
+                "budgetYear": {
+                  "type": "integer"
+                },
+                "fsourceCode": {
+                  "type": "string"
+                },
+                "fundCode": {
+                  "type": "string"
+                },
+                "planCode": {
+                  "type": "string"
+                },
+                "projId": {
+                  "type": "string"
+                },
+                "atvCode": {
+                  "type": "string"
+                },
+                "bgSecCode": {
+                  "type": "string"
+                },
+                "divCode": {
+                  "type": "string"
+                },
+                "usageType": {
+                  "type": "string"
+                },
+                "amountBalance": {
+                  "type": "integer"
+                },
+                "approveStatus": {
+                  "type": "string"
+                },
+                "approveBy": {
+                  "type": "string"
+                },
+                "approveDate": {
+                  "type": "string"
+                },
+                "remark": {
+                  "type": "string"
+                },
+                "apDocNo": {
+                  "type": "string"
+                },
+                "payStatus": {
+                  "type": "string"
+                },
+                "returnStatus": {
+                  "type": "string"
+                },
+                "crBy": {
+                  "type": "string"
+                },
+                "crDate": {
+                  "type": "string"
+                },
+                "updBy": {
+                  "type": "string"
+                },
+                "updDate": {
+                  "type": "string"
+                },
+                "progId": {
+                  "type": "string"
+                },
+                "petitionYn": {
+                  "type": "string"
+                },
+                "usePetitionYn": {
+                  "type": "string"
+                },
+                "cancelBy": {
+                  "type": "string"
+                },
+                "cancelDate": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "recCode": {
+                  "type": "string"
+                },
+                "dataSetCode": {
+                  "type": "string"
+                },
+                "fnReturnCode": {
+                  "type": "string"
+                },
+                "ctrlBgFlag": {
+                  "type": "string"
+                },
+                "petitionFlag": {
+                  "type": "string"
+                },
+                "avFlag": {
+                  "type": "string"
+                },
+                "apFlag": {
+                  "type": "string"
+                },
+                "budgetYearControlOt": {
+                  "type": "string"
+                },
+                "budgetYearOt": {
+                  "type": "string"
+                },
+                "fsourceCodeOt": {
+                  "type": "string"
+                },
+                "fundCodeOt": {
+                  "type": "string"
+                },
+                "planCodeOt": {
+                  "type": "string"
+                },
+                "projIdOt": {
+                  "type": "string"
+                },
+                "atvCodeOt": {
+                  "type": "string"
+                },
+                "bgSecCodeOt": {
+                  "type": "string"
+                },
+                "divCodeOt": {
+                  "type": "string"
+                },
+                "pyPetFlag": {
+                  "type": "string"
+                },
+                "subUsageYn": {
+                  "type": "string"
+                },
+                "approveStatusF": {
+                  "type": "string"
+                },
+                "approveDateF": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "sendDate": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "balAmtSupport": {
+                  "type": "string"
+                },
+                "usageRefId": {
+                  "type": "string"
+                },
+                "subFlag": {
+                  "type": "string"
+                },
+                "fwdUsageStatus": {
+                  "type": "string"
+                },
+                "printFlag": {
+                  "type": "string"
+                },
+                "fnReturnAmt": {
+                  "type": "string"
+                },
+                "projectNo": {
+                  "type": "string"
+                },
+                "projectNoTravel": {
+                  "type": "string"
+                },
+                "beginDateTravel": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "endDateTravel": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "dayTravel": {
+                  "type": "string"
+                },
+                "bgUsageDetails": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "object",
+                        "properties": {
+                          "ouCode": {
+                            "type": "string"
+                          },
+                          "usageId": {
+                            "type": "string"
+                          },
+                          "usageSeq": {
+                            "type": "integer"
+                          }
+                        }
+                      },
+                      "docRefId": {
+                        "type": "string"
+                      },
+                      "amount": {
+                        "type": "number",
+                        "description": "Amount being paid"
+                      },
+                      "taxAmount": {
+                        "type": "number",
+                        "description": "Tax amount for the payment"
+                      },
+                      "vatAmount": {
+                        "type": "number",
+                        "description": "VAT amount for the payment"
+                      },
+                      "fineAmount": {
+                        "type": "number",
+                        "description": "Fine amount for the payment"
+                      },
+                      "apCode": {
+                        "type": "string",
+                        "description": "AP code for the payment"
+                      },
+                      "divCode": {
+                        "type": "string",
+                        "description": "Division code for the payment"
+                      },
+                      "apTypeCode": {
+                        "type": "string",
+                        "description": "AP type code for the payment"
+                      },
+                      "moneyType": {
+                        "type": "string",
+                        "description": "Money type for the payment"
+                      },
+                      "accountId": {
+                        "type": "string",
+                        "description": "Account ID being paid to"
+                      },
+                      "payFlag": {
+                        "type": "string",
+                        "description": "Payment flag"
+                      },
+                      "payDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Payment date"
+                      },
+                      "crBy": {
+                        "type": "string"
+                      },
+                      "crDate": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "updBy": {
+                        "type": "string"
+                      },
+                      "updDate": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "progId": {
+                        "type": "string"
+                      },
+                      "apDocNo": {
+                        "type": "string"
+                      },
+                      "usageAmount": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "totalAmount": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "docRefNo": {
+                        "type": "string"
+                      },
+                      "payAmount": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "usageFlag": {
+                        "type": "string"
+                      },
+                      "returnFlag": {
+                        "type": "string"
+                      },
+                      "returnAmount": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "returnCode": {
+                        "type": "string"
+                      },
+                      "subType": {
+                        "type": "string"
+                      },
+                      "genPetitionCode": {
+                        "type": "string"
+                      },
+                      "apMainType": {
+                        "type": "string"
+                      },
+                      "apSubType": {
+                        "type": "string"
+                      },
+                      "paySystemId": {
+                        "type": "string"
+                      },
+                      "payRefNo": {
+                        "type": "string"
+                      },
+                      "fnReceiptNo": {
+                        "type": "string"
+                      },
+                      "payRefMainType": {
+                        "type": "string"
+                      },
+                      "payRefSubType": {
+                        "type": "string"
+                      },
+                      "returnSubType": {
+                        "type": "string"
+                      },
+                      "fnDivCode": {
+                        "type": "string"
+                      },
+                      "fnTransDate": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "pyTaxFlag": {
+                        "type": "string"
+                      },
+                      "flagPayByEmp": {
+                        "type": "string"
+                      },
+                      "fnSpTransDate": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "docOrgId": {
+                        "type": "string"
+                      },
+                      "discount": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "receiptNo": {
+                        "type": "string"
+                      },
+                      "updDateReceiptNo": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "updReceiptBy": {
+                        "type": "string"
+                      },
+                      "receiptNoGroup": {
+                        "type": "string"
+                      },
+                      "bgUsageForwards": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "object",
+                              "properties": {
+                                "ouCode": {
+                                  "type": "string"
+                                },
+                                "usageId": {
+                                  "type": "string"
+                                },
+                                "forwardId": {
+                                  "type": "string"
+                                },
+                                "usageSeq": {
+                                  "type": "integer"
+                                },
+                                "forwardSeq": {
+                                  "type": "integer"
+                                }
+                              }
+                            },
+                            "amountUsage": {
+                              "type": "string"
+                            },
+                            "amount": {
+                              "type": "number"
+                            },
+                            "amountBalance": {
+                              "type": "number"
+                            },
+                            "crBy": {
+                              "type": "string"
+                            },
+                            "crDate": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "updBy": {
+                              "type": "string"
+                            },
+                            "updDate": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "progId": {
+                              "type": "string"
+                            },
+                            "amountTax": {
+                              "type": "number"
+                            },
+                            "unitPrice": {
+                              "type": "number"
+                            },
+                            "qty": {
+                              "type": "number"
+                            },
+                            "vatRate": {
+                              "type": "number"
+                            },
+                            "amountVat": {
+                              "type": "number"
+                            },
+                            "vatAmount": {
+                              "type": "number"
+                            },
+                            "returnAmt": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "bgUsagePaynames": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "object",
+                              "properties": {
+                                "ouCode": {
+                                  "type": "string"
+                                },
+                                "usageId": {
+                                  "type": "string"
+                                },
+                                "usageSeq": {
+                                  "type": "integer"
+                                },
+                                "apCode": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "payname": {
+                              "type": "string"
+                            },
+                            "accountNoAp": {
+                              "type": "string",
+                              "description": "Account number with AP prefix"
+                            },
+                            "accountNoName": {
+                              "type": "string",
+                              "description": "Account name"
+                            },
+                            "bankCodeAp": {
+                              "type": "string",
+                              "description": "Bank code with AP prefix"
+                            },
+                            "branchCodeAp": {
+                              "type": "string",
+                              "description": "Branch code with AP prefix"
+                            },
+                            "paynameAmt": {
+                              "type": "integer",
+                              "description": "Amount of payments made"
+                            },
+                            "crBy": {
+                              "type": "string",
+                              "description": "User who created the account"
+                            },
+                            "crDate": {
+                              "type": "string",
+                              "description": "Date the account was created",
+                              "format": "date-time"
+                            },
+                            "updBy": {
+                              "type": "string",
+                              "description": "User who last updated the account"
+                            },
+                            "updDate": {
+                              "type": "string",
+                              "description": "Date the account was last updated",
+                              "format": "date-time"
+                            },
+                            "progId": {
+                              "type": "string",
+                              "description": "Program ID associated with the account"
+                            },
+                            "payTypeCode": {
+                              "type": "string",
+                              "description": "Payment type code"
+                            },
+                            "taxAmt": {
+                              "type": "number",
+                              "description": "Amount of taxes paid",
+                              "format": "float"
+                            },
+                            "taxRate": {
+                              "type": "number",
+                              "description": "Tax rate",
+                              "format": "float"
+                            },
+                            "vatAmt": {
+                              "type": "number",
+                              "description": "Amount of VAT paid",
+                              "format": "float"
+                            },
+                            "vatRate": {
+                              "type": "number",
+                              "description": "VAT rate",
+                              "format": "float"
+                            },
+                            "taxId": {
+                              "type": "string",
+                              "description": "Tax ID"
+                            },
+                            "apTaxTypeCode": {
+                              "type": "string",
+                              "description": "AP tax type code"
+                            },
+                            "fineAmt": {
+                              "type": "number",
+                              "description": "Amount of fines paid",
+                              "format": "float"
+                            },
+                            "amount": {
+                              "type": "number",
+                              "description": "Total amount",
+                              "format": "float"
+                            },
+                            "contractCode": {
+                              "type": "string",
+                              "description": "Contract code"
+                            }
+                          }
+                        }
+                      },
+                      "bgUsageSubstracts": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "object",
+                              "properties": {
+                                "ouCode": {
+                                  "type": "string"
+                                },
+                                "usageId": {
+                                  "type": "string"
+                                },
+                                "usageSeq": {
+                                  "type": "integer"
+                                },
+                                "substractCode": {
+                                  "type": "string"
+                                },
+                                "substractSeq": {
+                                  "type": "integer"
+                                }
+                              }
+                            },
+                            "taxId": {
+                              "type": "string",
+                              "description": "Tax ID number"
+                            },
+                            "apTaxTypeCode": {
+                              "type": "string",
+                              "description": "AP tax type code"
+                            },
+                            "amount": {
+                              "type": "number",
+                              "description": "Total amount of taxes",
+                              "format": "float"
+                            },
+                            "taxRate": {
+                              "type": "number",
+                              "description": "Tax rate",
+                              "format": "float"
+                            },
+                            "subtractAmt": {
+                              "type": "number",
+                              "description": "Amount to subtract from the total tax amount",
+                              "format": "float"
+                            },
+                            "crBy": {
+                              "type": "string",
+                              "description": "User who created the tax information"
+                            },
+                            "crDate": {
+                              "type": "string",
+                              "description": "Date the tax information was created",
+                              "format": "date-time"
+                            },
+                            "updBy": {
+                              "type": "string",
+                              "description": "User who last updated the tax information"
+                            },
+                            "updDate": {
+                              "type": "string",
+                              "description": "Date the tax information was last updated",
+                              "format": "date-time"
+                            },
+                            "progId": {
+                              "type": "string",
+                              "description": "Program ID associated with the tax information"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "bgUsageSupports": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                },
+                "approveByF": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/return"
+            }
+          },
+          "400": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "401": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "return": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "object",
+          "properties": {
+            "ouCode": {
+              "type": "string"
+            },
+            "usageId": {
+              "type": "string",
+              "example": null
+            }
+          }
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "errorCode": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
