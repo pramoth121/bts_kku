@@ -1,0 +1,166 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Invoice Creation API",
+    "description": "Generate OAuth2 token and call the invoice creation endpoint.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "httpshttps://dev-oic-axacomqa0kjr-si.integration.ap-singapore-1.ocp.oraclecloud.com/ic/api/integration/v1/flows/rest/KK_IN_FI_AP_01_LM_ER_AP_TR_AD_IN/1.0"
+    }
+  ],
+  "paths": {
+    "/CreateTravelAdvance": {
+      "post": {
+        "summary": "Create an Invoice",
+        "security": [
+          {
+            "OAuth2": [
+              "https://34E86B6FD2134E2FA35CE67D4A2FD8C9.integration.ap-singapore-1.ocp.oraclecloud.com:443urn:opc:resource:consumer::all https://34E86B6FD2134E2FA35CE67D4A2FD8C9.integration.ap-singapore-1.ocp.oraclecloud.com:443/ic/api/"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "BusinessUnit": {
+                    "type": "string",
+                    "example": "KKBU01-FCLT01-Office of the President-สำนักงานอธิการบดี"
+                  },
+                  "PartyType": {
+                    "type": "string",
+                    "example": "EMPLOYEE"
+                  },
+                  "PartyName": {
+                    "type": "string",
+                    "example": "นางสาวเรนิสา ไชยส่งเสริม"
+                  },
+                  "TripNumber": {
+                    "type": "string",
+                    "example": "OIC_T101"
+                  },
+                  "loanType": {
+                    "type": "string",
+                    "enum": [
+                      "GOVT",
+                      "DIV"
+                    ],
+                    "example": "DIV",
+                    "description": "- GOVT: Borrow from the central government  \n- DIV: Borrowed from the division\n"
+                  },
+                  "Description": {
+                    "type": "string",
+                    "example": "Air Travel Advance"
+                  },
+                  "StartDate": {
+                    "type": "string",
+                    "format": "date",
+                    "example": "01-sep-2024"
+                  },
+                  "EndDate": {
+                    "type": "string",
+                    "format": "date",
+                    "example": "05-sep-2024"
+                  },
+                  "Amount": {
+                    "type": "string",
+                    "example": "1000"
+                  },
+                  "PositionLevel": {
+                    "type": "string",
+                    "enum": [
+                      "01",
+                      "02",
+                      "03",
+                      "04",
+                      "05",
+                      "06",
+                      "07",
+                      "08",
+                      "09",
+                      "10",
+                      "11",
+                      "12",
+                      "13",
+                      "14",
+                      "15",
+                      "16",
+                      "17",
+                      "18",
+                      "19"
+                    ],
+                    "example": "04",
+                    "description": "- 04: Expert Level  \n- 05: Teacher  \n- 14: Chancellor  \n- Full list in documentation.\n"
+                  },
+                  "TravelAdvanceDate": {
+                    "type": "string",
+                    "format": "date",
+                    "example": "15-Aug-2024"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Invoice created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "StatusCode": {
+                      "type": "string",
+                      "example": "SUCCESS"
+                    },
+                    "StatusMessage": {
+                      "type": "string",
+                      "example": "Trip Number is interfaced to fusion successfully"
+                    },
+                    "TripNumber": {
+                      "type": "string",
+                      "example": "OIC_T101"
+                    },
+                    "LoanAgreementNumber": {
+                      "type": "string",
+                      "example": "DPA01067020000001"
+                    },
+                    "OracleFusionPrepayAPInvoiceId": {
+                      "type": "string",
+                      "example": "1007891"
+                    },
+                    "OracleFusionPrepayAPInvoiceNum": {
+                      "type": "string",
+                      "example": "1001"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "OAuth2": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://idcs-a894ed03dc61468fbff991049aecdedc.identity.oraclecloud.com:443/oauth2/v1/token",
+            "scopes": {
+              "https://34E86B6FD2134E2FA35CE67D4A2FD8C9.integration.ap-singapore-1.ocp.oraclecloud.com:443urn:opc:resource:consumer::all https://34E86B6FD2134E2FA35CE67D4A2FD8C9.integration.ap-singapore-1.ocp.oraclecloud.com:443/ic/api/": "Access to create invoices"
+            }
+          }
+        }
+      }
+    }
+  }
+}
