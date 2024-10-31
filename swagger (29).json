@@ -100,7 +100,7 @@
             }
           },
           {
-            "in": "header",
+            "in": "query",
             "name": "Authorization",
             "required": true,
             "type": "string"
