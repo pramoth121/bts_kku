@@ -1,0 +1,330 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "DPA"
+  },
+  "host": "iaajtj-dev1.fa.ocs.oraclecloud.com",
+  "schemes": [
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "paths": {
+    "/fscmRestApi/resources/11.13.18.05/draftPurchaseOrders": {
+      "post": {
+        "summary": "Create a purchase order",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "purchaseOrder",
+            "description": "Purchase Order data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ProcurementBUId": {
+                  "type": "integer",
+                  "example": 300000005501001
+                },
+                "RequisitioningBUId": {
+                  "type": "integer",
+                  "example": 300000005501001
+                },
+                "Buyer": {
+                  "type": "string",
+                  "example": "LC.FIN"
+                },
+                "Supplier": {
+                  "type": "string",
+                  "example": "หจก. เอ็ม แอนด์ จี ซิสเต็ม"
+                },
+                "Currency": {
+                  "type": "string",
+                  "example": "Baht"
+                },
+                "SupplierSite": {
+                  "type": "string",
+                  "example": "HQ"
+                },
+                "BillToLocation": {
+                  "type": "string",
+                  "example": "สำนักงานอธิการบดี-ศูนย์นวัตกรรมการเรียนการสอน"
+                },
+                "DefaultShipToLocation": {
+                  "type": "string",
+                  "example": "สำนักงานอธิการบดี-ศูนย์นวัตกรรมการเรียนการสอน"
+                },
+                "RequiredAcknowledgment": {
+                  "type": "string",
+                  "example": "None"
+                },
+                "Description": {
+                  "type": "string",
+                  "example": "PO created using REST"
+                },
+                "SupplierCommunicationMethod": {
+                  "type": "string",
+                  "example": "EMAIL"
+                },
+                "SupplierEmailAddress": {
+                  "type": "string",
+                  "example": "TallManufacturing@example.com"
+                },
+                "BuyerManagedTransportFlag": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "PayOnReceiptFlag": {
+                  "type": "string",
+                  "example": "N"
+                },
+                "PaymentTerms": {
+                  "type": "string",
+                  "example": "D30"
+                },
+                "FreightTerms": {
+                  "type": "string",
+                  "example": null
+                },
+                "FOB": {
+                  "type": "string",
+                  "example": null
+                },
+                "NoteToReceiver": {
+                  "type": "string",
+                  "example": "This is a note to Receiver"
+                },
+                "NoteToSupplier": {
+                  "type": "string",
+                  "example": "This is a note to Supplier"
+                },
+                "Carrier": {
+                  "type": "string",
+                  "example": null
+                },
+                "ServiceLevel": {
+                  "type": "string",
+                  "example": "2nd day air"
+                },
+                "ModeOfTransportCode": {
+                  "type": "string",
+                  "example": "PARCEL"
+                },
+                "lines": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "LineNumber": {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      "LineType": {
+                        "type": "string",
+                        "example": "Goods"
+                      },
+                      "Category": {
+                        "type": "string",
+                        "example": "INV_001"
+                      },
+                      "Description": {
+                        "type": "string",
+                        "example": "แฟ้ม"
+                      },
+                      "Quantity": {
+                        "type": "integer",
+                        "example": 344
+                      },
+                      "Price": {
+                        "type": "integer",
+                        "example": 31
+                      },
+                      "UOM": {
+                        "type": "string",
+                        "example": "ชิ้น"
+                      },
+                      "schedules": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ScheduleNumber": {
+                              "type": "integer",
+                              "example": 1
+                            },
+                            "Quantity": {
+                              "type": "integer",
+                              "example": 344
+                            },
+                            "ShipToLocation": {
+                              "type": "string",
+                              "example": "สำนักงานอธิการบดี-กองคลัง"
+                            },
+                            "ShipToOrganization": {
+                              "type": "string",
+                              "example": "INV01-สำนักงานอธิการบดี"
+                            },
+                            "ReceiptCloseTolerancePercent": {
+                              "type": "integer",
+                              "example": 0
+                            },
+                            "InvoiceMatchOptionCode": {
+                              "type": "string",
+                              "example": "R"
+                            },
+                            "EarlyReceiptToleranceDays": {
+                              "type": "integer",
+                              "example": 0
+                            },
+                            "InvoiceCloseTolerancePercent": {
+                              "type": "integer",
+                              "example": 0
+                            },
+                            "LateReceiptToleranceDays": {
+                              "type": "integer",
+                              "example": 0
+                            },
+                            "AccrueAtReceiptFlag": {
+                              "type": "string",
+                              "example": "true"
+                            },
+                            "InspectionRequiredFlag": {
+                              "type": "boolean",
+                              "example": true
+                            },
+                            "ReceiptRequiredFlag": {
+                              "type": "boolean",
+                              "example": false
+                            },
+                            "ReceiptRoutingId": {
+                              "type": "integer",
+                              "example": 1
+                            },
+                            "DestinationTypeCode": {
+                              "type": "string",
+                              "example": "INVENTORY"
+                            },
+                            "Carrier": {
+                              "type": "string",
+                              "example": null
+                            },
+                            "ServiceLevel": {
+                              "type": "string",
+                              "example": null
+                            },
+                            "ModeOfTransportCode": {
+                              "type": "string",
+                              "example": "PARCEL"
+                            },
+                            "distributions": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "DistributionNumber": {
+                                    "type": "integer",
+                                    "example": 1
+                                  },
+                                  "DeliverToLocation": {
+                                    "type": "string",
+                                    "example": "สำนักงานอธิการบดี-กองคลัง"
+                                  },
+                                  "POChargeAccountId": {
+                                    "type": "integer",
+                                    "example": 172002
+                                  },
+                                  "Quantity": {
+                                    "type": "integer",
+                                    "example": 344
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved purchase order details",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "POHeaderId": {
+                  "type": "integer"
+                },
+                "OrderNumber": {
+                  "type": "string"
+                },
+                "Description": {
+                  "type": "string",
+                  "example": "PO created using REST"
+                },
+                "DocumentStyleId": {
+                  "type": "integer",
+                  "example": 1
+                },
+                "DocumentStyle": {
+                  "type": "string",
+                  "example": "Purchase Order"
+                },
+                "StatusCode": {
+                  "type": "string",
+                  "example": "INCOMPLETE"
+                },
+                "Status": {
+                  "type": "string",
+                  "example": "Incomplete"
+                },
+                "ProcurementBUId": {
+                  "type": "integer",
+                  "example": 300000005501001
+                },
+                "ProcurementBU": {
+                  "type": "string",
+                  "example": "KKBU01-สำนักงานอธิการบดี"
+                },
+                "RequisitioningBUId": {
+                  "type": "integer",
+                  "example": 300000005501001
+                },
+                "RequisitioningBU": {
+                  "type": "string",
+                  "example": "KKBU01-สำนักงานอธิการบดี"
+                },
+                "BuyerId": {
+                  "type": "integer",
+                  "example": 300000021805716
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "basicAuth": {
+      "type": "basic"
+    }
+  }
+}
