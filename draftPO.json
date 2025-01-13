@@ -265,58 +265,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Successfully retrieved purchase order details",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "POHeaderId": {
-                  "type": "integer"
-                },
-                "OrderNumber": {
-                  "type": "string"
-                },
-                "Description": {
-                  "type": "string",
-                  "example": "PO created using REST"
-                },
-                "DocumentStyleId": {
-                  "type": "integer",
-                  "example": 1
-                },
-                "DocumentStyle": {
-                  "type": "string",
-                  "example": "Purchase Order"
-                },
-                "StatusCode": {
-                  "type": "string",
-                  "example": "INCOMPLETE"
-                },
-                "Status": {
-                  "type": "string",
-                  "example": "Incomplete"
-                },
-                "ProcurementBUId": {
-                  "type": "integer",
-                  "example": 300000005501001
-                },
-                "ProcurementBU": {
-                  "type": "string",
-                  "example": "KKBU01-สำนักงานอธิการบดี"
-                },
-                "RequisitioningBUId": {
-                  "type": "integer",
-                  "example": 300000005501001
-                },
-                "RequisitioningBU": {
-                  "type": "string",
-                  "example": "KKBU01-สำนักงานอธิการบดี"
-                },
-                "BuyerId": {
-                  "type": "integer",
-                  "example": 300000021805716
-                }
-              }
-            }
+            "description": "Successfully retrieved purchase order details"
           }
         }
       }
