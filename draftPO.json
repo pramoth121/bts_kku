@@ -264,7 +264,7 @@
           }
         ],
         "responses": {
-          "200": {
+          "201": {
             "description": "Successfully retrieved purchase order details",
             "schema": {
               "type": "object",
