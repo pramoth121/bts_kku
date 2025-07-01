@@ -6,7 +6,9 @@
   },
   "host": "iaajtj-test.fa.ocs.oraclecloud.com",
   "basePath": "/fscmRestApi/resources/11.13.18.05",
-  "schemes": ["https"],
+  "schemes": [
+    "https"
+  ],
   "securityDefinitions": {
     "basicAuth": {
       "type": "basic"
@@ -17,14 +19,22 @@
       "basicAuth": []
     }
   ],
-  "produces": ["application/json"],
-  "consumes": ["application/json"],
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
   "paths": {
     "/draftPurchaseOrders": {
       "post": {
         "summary": "Create a new Purchase Order",
-        "consumes": ["application/json"],
-        "produces": ["application/json"],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "in": "body",
@@ -37,7 +47,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Success",
+            "description": "Created",
             "schema": {
               "type": "object",
               "properties": {
@@ -45,7 +55,10 @@
                   "type": "integer",
                   "format": "int64"
                 }
-              }
+              },
+              "required": [
+                "POHeaderId"
+              ]
             }
           },
           "400": {
@@ -61,7 +74,7 @@
             }
           },
           "402": {
-            "description": "Invalid input",
+            "description": "Payment Required or Invalid input",
             "schema": {
               "type": "object",
               "properties": {
