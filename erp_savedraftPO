@@ -1,0 +1,331 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "DPA"
+  },
+  "host": "iaajtj-test.fa.ocs.oraclecloud.com",
+  "basePath": "/fscmRestApi/resources/11.13.18.05",
+  "schemes": ["https"],
+  "securityDefinitions": {
+    "basicAuth": {
+      "type": "basic"
+    }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
+  "produces": ["application/json"],
+  "consumes": ["application/json"],
+  "paths": {
+    "/draftPurchaseOrders": {
+      "post": {
+        "summary": "Create a new Purchase Order",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PurchaseOrder"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "required": ["POHeaderId"],
+              "properties": {
+                "POHeaderId": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "Invalid request body"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Invalid input",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "Invalid request body"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "Unexpected error occurred"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "PurchaseOrder": {
+      "type": "object",
+      "required": [
+        "ProcurementBUId",
+        "RequisitioningBUId",
+        "Buyer",
+        "Supplier",
+        "Currency",
+        "SupplierSite",
+        "RequiredAcknowledgment",
+        "BillToLocation",
+        "Description",
+        "SupplierCommunicationMethod",
+        "SupplierEmailAddress",
+        "BuyerManagedTransportFlag",
+        "PayOnReceiptFlag",
+        "PaymentTerms",
+        "NoteToReceiver",
+        "NoteToSupplier",
+        "DefaultTaxationCountryCode",
+        "DefaultTaxationCountry",
+        "OverridingApprover",
+        "lines"
+      ],
+      "properties": {
+        "ProcurementBUId": {
+          "type": "integer"
+        },
+        "RequisitioningBUId": {
+          "type": "integer"
+        },
+        "Buyer": {
+          "type": "string"
+        },
+        "Supplier": {
+          "type": "string"
+        },
+        "Currency": {
+          "type": "string"
+        },
+        "SupplierSite": {
+          "type": "string"
+        },
+        "RequiredAcknowledgment": {
+          "type": "string"
+        },
+        "BillToLocation": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "SupplierCommunicationMethod": {
+          "type": "string"
+        },
+        "SupplierEmailAddress": {
+          "type": "string"
+        },
+        "BuyerManagedTransportFlag": {
+          "type": "boolean"
+        },
+        "PayOnReceiptFlag": {
+          "type": "string"
+        },
+        "PaymentTerms": {
+          "type": "string"
+        },
+        "FreightTerms": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "FOB": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "NoteToReceiver": {
+          "type": "string"
+        },
+        "NoteToSupplier": {
+          "type": "string"
+        },
+        "Carrier": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "DefaultTaxationCountryCode": {
+          "type": "string"
+        },
+        "DefaultTaxationCountry": {
+          "type": "string"
+        },
+        "OverridingApprover": {
+          "type": "string"
+        },
+        "lines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Line"
+          }
+        }
+      }
+    },
+    "Line": {
+      "type": "object",
+      "required": [
+        "LineNumber",
+        "LineType",
+        "Category",
+        "Description",
+        "Amount",
+        "schedules"
+      ],
+      "properties": {
+        "LineNumber": {
+          "type": "integer"
+        },
+        "LineType": {
+          "type": "string"
+        },
+        "Category": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number"
+        },
+        "schedules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Schedule"
+          }
+        }
+      }
+    },
+    "Schedule": {
+      "type": "object",
+      "required": [
+        "ScheduleNumber",
+        "Amount",
+        "ShipToLocation",
+        "ShipToOrganization",
+        "ReceiptCloseTolerancePercent",
+        "InvoiceMatchOptionCode",
+        "InvoiceMatchOption",
+        "InspectionRequiredFlag",
+        "ReceiptRequiredFlag",
+        "MatchApprovalLevelCode",
+        "MatchApprovalLevel",
+        "InvoiceCloseTolerancePercent",
+        "LateReceiptToleranceDays",
+        "ReceiptRouting",
+        "DestinationTypeCode",
+        "distributions"
+      ],
+      "properties": {
+        "ScheduleNumber": {
+          "type": "integer"
+        },
+        "Amount": {
+          "type": "number"
+        },
+        "ShipToLocation": {
+          "type": "string"
+        },
+        "ShipToOrganization": {
+          "type": "string"
+        },
+        "ReceiptCloseTolerancePercent": {
+          "type": "number"
+        },
+        "InvoiceMatchOptionCode": {
+          "type": "string"
+        },
+        "InvoiceMatchOption": {
+          "type": "string"
+        },
+        "InspectionRequiredFlag": {
+          "type": "boolean"
+        },
+        "ReceiptRequiredFlag": {
+          "type": "boolean"
+        },
+        "MatchApprovalLevelCode": {
+          "type": "string"
+        },
+        "MatchApprovalLevel": {
+          "type": "string"
+        },
+        "InvoiceCloseTolerancePercent": {
+          "type": "number"
+        },
+        "LateReceiptToleranceDays": {
+          "type": "integer"
+        },
+        "ReceiptRouting": {
+          "type": "string"
+        },
+        "DestinationTypeCode": {
+          "type": "string"
+        },
+        "Carrier": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "distributions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Distribution"
+          }
+        }
+      }
+    },
+    "Distribution": {
+      "type": "object",
+      "required": [
+        "DistributionNumber",
+        "DeliverToLocation",
+        "POChargeAccount",
+        "Amount"
+      ],
+      "properties": {
+        "DistributionNumber": {
+          "type": "integer"
+        },
+        "DeliverToLocation": {
+          "type": "string"
+        },
+        "POChargeAccount": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
