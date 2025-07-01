@@ -40,7 +40,6 @@
             "description": "Success",
             "schema": {
               "type": "object",
-              "required": ["POHeaderId"],
               "properties": {
                 "POHeaderId": {
                   "type": "integer",
