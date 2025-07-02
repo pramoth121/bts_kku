@@ -51,7 +51,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "POHeaderId": {
+                "POHeaderId2": {
                   "type": "integer",
                   "format": "int64"
                 },
@@ -60,7 +60,7 @@
                 }
               },
               "required": [
-                "POHeaderId",
+                "POHeaderId2",
                 "OrderNumber"
               ]
             }
