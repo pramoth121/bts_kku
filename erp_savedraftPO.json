@@ -54,6 +54,9 @@
                 "POHeaderId": {
                   "type": "integer",
                   "format": "int64"
+                },
+                "OrderNumber":{
+                  "type": "string"
                 }
               },
               "required": [
