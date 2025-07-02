@@ -49,20 +49,7 @@
           "201": {
             "description": "Created",
             "schema": {
-              "type": "object",
-              "properties": {
-                "POHeaderId2": {
-                  "type": "integer",
-                  "format": "int64"
-                },
-                "OrderNumber":{
-                  "type": "string"
-                }
-              },
-              "required": [
-                "POHeaderId2",
-                "OrderNumber"
-              ]
+              "$ref": "#/definitions/PurchaseOrderReturn"
             }
           },
           "400": {
@@ -342,6 +329,200 @@
           "type": "number"
         }
       }
+    },
+     "PurchaseOrderReturn": {
+      "type": "object",
+      "required": [
+        "OrderNumber",
+        "ProcurementBU",
+        "Buyer",
+        "Supplier",
+        "CurrencyCode",
+        "lines"
+      ],
+      "properties": {
+        "POHeaderId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "OrderNumber": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "StatusCode": {
+          "type": "string"
+        },
+        "ProcurementBU": {
+          "type": "string"
+        },
+        "Buyer": {
+          "type": "string"
+        },
+        "BuyerEmail": {
+          "type": "string",
+          "format": "email"
+        },
+        "CurrencyCode": {
+          "type": "string"
+        },
+        "Supplier": {
+          "type": "string"
+        },
+        "SupplierEmailAddress": {
+          "type": "string",
+          "format": "email"
+        },
+        "NoteToSupplier": {
+          "type": "string"
+        },
+        "NoteToReceiver": {
+          "type": "string"
+        },
+        "PaymentTerms": {
+          "type": "string"
+        },
+        "DocumentCreationMethod": {
+          "type": "string"
+        },
+        "DefaultTaxationCountryCode": {
+          "type": "string"
+        },
+        "BudgetaryControlEnabledFlag": {
+          "type": "boolean"
+        },
+        "lines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PurchaseOrderLineReturn"
+          }
+        }
+      }
+    },
+    "PurchaseOrderLineReturn": {
+      "type": "object",
+      "required": [
+        "LineNumber",
+        "LineType",
+        "CategoryCode",
+        "Amount",
+        "schedules"
+      ],
+      "properties": {
+        "POLineId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LineNumber": {
+          "type": "integer"
+        },
+        "LineType": {
+          "type": "string"
+        },
+        "CategoryCode": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "float"
+        },
+        "CurrencyCode": {
+          "type": "string"
+        },
+        "schedules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScheduleReturn"
+          }
+        }
+      }
+    },
+    "ScheduleReturn": {
+      "type": "object",
+      "required": [
+        "ScheduleNumber",
+        "Amount",
+        "ShipToLocation",
+        "distributions"
+      ],
+      "properties": {
+        "LineLocationId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "ScheduleNumber": {
+          "type": "integer"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "float"
+        },
+        "ShipToLocation": {
+          "type": "string"
+        },
+        "DestinationType": {
+          "type": "string"
+        },
+        "AssessableValue": {
+          "type": "number",
+          "format": "float"
+        },
+        "InvoiceMatchOption": {
+          "type": "string"
+        },
+        "MatchApprovalLevel": {
+          "type": "string"
+        },
+        "ReceiptRouting": {
+          "type": "string"
+        },
+        "distributions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DistributionReturn"
+          }
+        }
+      }
+    },
+    "DistributionReturn": {
+      "type": "object",
+      "required": [
+        "DistributionNumber",
+        "Amount",
+        "DeliverToLocation",
+        "POChargeAccount"
+      ],
+      "properties": {
+        "PODistributionId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "DistributionNumber": {
+          "type": "integer"
+        },
+        "Amount": {
+          "type": "number",
+          "format": "float"
+        },
+        "DeliverToLocation": {
+          "type": "string"
+        },
+        "POChargeAccount": {
+          "type": "string"
+        },
+        "BudgetDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "CurrencyCode": {
+          "type": "string"
+        }
+      }
     }
+    
   }
 }
